@@ -1,137 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apes Amoblamientos</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-  html { scroll-behavior: smooth; }
-  body { background-color: #fff; color: #000; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apes Amoblamientos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
 
-  /* MENÚ FIJO */
-  header {
-    position: fixed; top:0; left:0; width:100%;
-    background-color:#000; color:#fff; z-index:1000;
-  }
-  nav {
-    display:flex; justify-content: space-between; align-items:center;
-    max-width:1200px; margin:0 auto; padding:10px 20px;
-  }
-  nav .logo { font-size:1.5em; font-weight:bold; }
-  nav ul { display:flex; list-style:none; }
-  nav ul li { margin-left:20px; }
-  nav ul li a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s; }
-  nav ul li a:hover { color:#ccc; }
+    header {
+      background-color: #000;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  section { padding:100px 20px 60px; max-width:1200px; margin:0 auto; }
-  #inicio { height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; background:#000 url('img/fondo-ejemplo.jpg') center/cover no-repeat; color:#fff; }
-  #inicio h1 { font-size:3em; margin-bottom:20px; }
-  #inicio p { font-size:1.2em; }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
 
-  #nosotros { background:#fff; color:#000; }
-  #nosotros h2 { font-size:2em; margin-bottom:20px; text-align:center; }
-  #nosotros p { max-width:800px; margin:0 auto; line-height:1.6em; text-align:center; }
-  #nosotros img { display:block; margin:20px auto; max-width:100%; border-radius:10px; }
+    .menu-btn {
+      cursor: pointer;
+      font-size: 26px;
+    }
 
-  #obras { background:#f4f4f4; }
-  #obras h2 { text-align:center; font-size:2em; margin-bottom:40px; }
-  .galeria { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:15px; }
-  .galeria img { width:100%; cursor:pointer; border-radius:8px; transition:0.3s; }
-  .galeria img:hover { transform: scale(1.05); }
+    nav {
+      display: none;
+      background: #111;
+      text-align: center;
+    }
 
-  #lightbox { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); display:none; justify-content:center; align-items:center; z-index:2000; }
-  #lightbox img { max-width:90%; max-height:90%; border-radius:10px; }
-  #lightbox span { position:absolute; top:20px; right:30px; font-size:2em; color:#fff; cursor:pointer; }
+    nav a {
+      display: block;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+    }
 
-  #contacto { background:#000; color:#fff; text-align:center; }
-  #contacto h2 { font-size:2em; margin-bottom:20px; }
-  #contacto p { margin-bottom:10px; }
-  .botones { margin-top:20px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
-  .boton { display:inline-block; padding:15px 25px; background:#fff; color:#000; text-decoration:none; border-radius:5px; font-weight:bold; transition:0.3s; }
-  .boton:hover { background:#ccc; }
+    nav a:hover {
+      background: #333;
+    }
 
-  @media(max-width:768px){
-    nav ul { flex-direction: column; margin-top:10px; }
-    nav ul li { margin:10px 0; }
-    #inicio h1 { font-size:2.2em; }
-  }
-</style>
+    /* --- Imagen principal (hero) --- */
+    .hero {
+      background: url("img/portada.png") center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 30px 15px;
+      text-align: center;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .card {
+      background: #eaeaea;
+      margin: 15px auto;
+      max-width: 600px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: none;
+      border: 1px solid #000;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .social {
+      margin-top: 10px;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    .social img {
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+      filter: invert(1);
+      transition: 0.3s;
+    }
+
+    .social img:hover {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <nav>
+  <header>
     <div class="logo">Apes Amoblamientos</div>
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#obras">Obras</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <nav id="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Contacto</a>
   </nav>
-</header>
 
-<section id="inicio">
-  <div>
-    <h1>Apes Amoblamientos</h1>
-    <p>Muebles y decoración artesanal en Buenos Aires</p>
+  <div class="hero" id="inicio">
+    <h1>SOLUCIONES EN MUEBLES A MEDIDA</h1>
   </div>
-</section>
 
-<section id="nosotros">
-  <h2>Nosotros</h2>
-  <p>Apes Amoblamientos se dedica a la fabricación y diseño de muebles únicos, combinando calidad, estética y funcionalidad para cada proyecto. Nuestro objetivo es crear ambientes que reflejen personalidad y estilo propio.</p>
-  <img src="img/nosotros-ejemplo.jpg" alt="Nosotros">
-</section>
+  <section id="productos">
+    <div class="card">
+      <img src="img/obra1.jpg" alt="Obras particulares" />
+      <h2>Obras particulares</h2>
+      <p>Descubrí los trabajos personalizados de Apes Amoblamientos.</p>
+      <button class="btn" onclick="window.location.href='obras.html'">Ver más</button>
+    </div>
+  </section>
 
-<section id="obras">
-  <h2>Obras / Fotos</h2>
-  <div class="galeria">
-    <img src="img/obra1-ejemplo.jpg" alt="Obra 1">
-    <img src="img/obra2-ejemplo.jpg" alt="Obra 2">
-    <img src="img/obra3-ejemplo.jpg" alt="Obra 3">
-    <img src="img/obra4-ejemplo.jpg" alt="Obra 4">
-    <img src="img/obra5-ejemplo.jpg" alt="Obra 5">
-  </div>
-</section>
+  <footer id="contacto">
+    <p>Contacto</p>
+    <div class="social">
+      <a href="https://wa.me/5491156668191" target="_blank">
+        <img src="img/whatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/apesamoblamientos" target="_blank">
+        <img src="img/instagram.png" alt="Instagram">
+      </a>
+    </div>
+    <div style="margin-top:10px;">© 2025 Apes Amoblamientos</div>
+  </footer>
 
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p>Tel/WhatsApp: <a href="https://wa.me/5491156668191" target="_blank" style="color:#fff;">+54 9 11 5666-8191</a></p>
-  <p>Instagram: <a href="https://instagram.com/apesamoblamientos" target="_blank" style="color:#fff;">@apesamoblamientos</a></p>
-  <div class="botones">
-    <a class="boton" href="https://wa.me/5491156668191" target="_blank">WhatsApp</a>
-    <a class="boton" href="https://instagram.com/apesamoblamientos" target="_blank">Instagram</a>
-  </div>
-</section>
-
-<div id="lightbox">
-  <span id="cerrar">&times;</span>
-  <img src="" alt="Ampliar imagen">
-</div>
-
-<script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('img');
-  const cerrar = document.getElementById('cerrar');
-  const galeriaImgs = document.querySelectorAll('.galeria img');
-
-  galeriaImgs.forEach(img => {
-    img.addEventListener('click', () => {
-      lightbox.style.display = 'flex';
-      lightboxImg.src = img.src;
-    });
-  });
-
-  cerrar.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-
-  lightbox.addEventListener('click', e => {
-    if(e.target === lightbox) lightbox.style.display = 'none';
-  });
-</script>
-
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
