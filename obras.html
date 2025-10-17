@@ -3,218 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Obras Particulares | Apes Amoblamientos</title>
-  <meta name="description" content="Galería de obras particulares de Apes Amoblamientos: cocinas, placares y muebles a medida.">
-  <meta name="keywords" content="obras, muebles, carpintería, cocinas, placares, Apes Amoblamientos">
+  <title>Proyectos | Apes Amoblamientos</title>
+  <meta name="description" content="Explorá los proyectos de Apes Amoblamientos: cocinas, vestidores, habitaciones, baños y muebles personalizados. Diseños modernos y funcionales a medida.">
+  <meta name="keywords" content="muebles, cocinas, vestidores, habitaciones, baños, carpintería, diseño, Apes Amoblamientos">
   <link rel="icon" href="img/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient(120deg, #000000 35%, #ff6600 100%);
-      background-attachment: fixed;
-      color: #fff;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* HEADER */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      color: #000;
+      overflow-x: hidden;
+    }
+
     header {
-      background-color: rgba(0, 0, 0, 0.85);
+      background: linear-gradient(135deg, #000000 40%, #ff6600 100%);
       padding: 12px 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .logo-img {
       height: 45px;
+      cursor: pointer;
     }
 
     .menu-btn {
       cursor: pointer;
       font-size: 28px;
       color: #fff;
-      transition: 0.3s;
-    }
-
-    .menu-btn:hover {
-      color: #ff6600;
     }
 
     nav {
       display: none;
-      background: rgba(0, 0, 0, 0.9);
-      text-align: center;
-    }
-
-    nav a {
-      display: block;
-      padding: 12px;
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      background: #ff6600;
-    }
-
-    /* CONTENIDO PRINCIPAL */
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    h1 {
-      color: #ff6600;
-      margin-bottom: 40px;
-      font-size: 2rem;
-    }
-
-    /* GALERÍA */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 12px 25px;
-      background: #ff6600;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #000;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #000;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-      margin-top: 50px;
-    }
-
-    .social {
-      margin-top: 10px;
-    }
-
-    .social a {
-      display: inline-block;
-      margin: 0 8px;
-    }
-
-    .social img {
-      width: 22px;
-      height: 22px;
-      filter: invert(1);
-      transition: 0.3s;
-    }
-
-    .social img:hover {
-      transform: scale(1.1);
-      opacity: 0.8;
-    }
-
-    /* WHATSAPP */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 55px;
-      height: 55px;
-      z-index: 100;
-    }
-
-    .whatsapp-float img {
-      width: 100%;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .whatsapp-float img:hover {
-      transform: scale(1.1);
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <img src="img/logo.png" alt="Apes Amoblamientos" class="logo-img">
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  </header>
-
-  <nav id="menu">
-    <a href="index.html">Inicio</a>
-    <a href="obras.html">Obras particulares</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <section>
-    <h1>Obras Particulares</h1>
-
-    <div class="gallery">
-      <img src="img/obra1.jpg" alt="Cocina moderna blanca">
-      <img src="img/obra2.jpg" alt="Placard empotrado">
-      <img src="img/obra3.jpg" alt="Oficina a medida">
-      <img src="img/obra4.jpg" alt="Biblioteca con iluminación LED">
-      <img src="img/obra5.jpg" alt="Mueble de baño personalizado">
-      <img src="img/obra6.jpg" alt="Cocina de diseño natural">
-    </div>
-
-    <a href="index.html" class="btn">Volver al inicio</a>
-  </section>
-
-  <footer id="contacto">
-    <p>📞 +54 9 11 6568-8191</p>
-    <p>📸 <a href="https://www.instagram.com/apesamoblamientos/" target="_blank">@apesamoblamientos</a></p>
-    <div class="social">
-      <a href="https://www.instagram.com/apesamoblamientos/" target="_blank">
-        <img src="img/instagram.png" alt="Instagram">
-      </a>
-    </div>
-    <p>© 2025 Apes Amoblamientos</p>
-  </footer>
-
-  <a href="https://wa.me/5491165688191" class="whatsapp-float" target="_blank">
-    <img src="img/whatsapp.png" alt="WhatsApp">
-  </a>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-
-</body>
-</html>
+      background: rgba(0, 0, 0, 0.9)
