@@ -4,49 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Proyectos | Apes Amoblamientos</title>
-  <meta name="description" content="Explorá los proyectos de Apes Amoblamientos: cocinas, vestidores, habitaciones, baños y muebles personalizados. Diseños modernos y funcionales a medida.">
-  <meta name="keywords" content="muebles, cocinas, vestidores, habitaciones, baños, carpintería, diseño, Apes Amoblamientos">
-  <link rel="icon" href="img/favicon.webp" type="image/webp">
+  <meta name="description" content="Proyectos de Apes Amoblamientos: cocinas, vestidores, habitaciones, baños y muebles personalizados en Zona Norte y CABA.">
+  <meta name="keywords" content="muebles, cocinas, vestidores, habitaciones, baños, diseño, Apes Amoblamientos">
+  <link rel="icon" href="img/logo.jpg" type="image/jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     * {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-    body {
-      font-family:'Montserrat',sans-serif;
-      background:#fff;
-      color:#000;
-      overflow-x:hidden;
-    }
+    body {font-family:'Montserrat',sans-serif;background:#fff;color:#000;overflow-x:hidden;}
 
     header {
       background:linear-gradient(135deg,#000000 40%,#ff6600 100%);
       padding:12px 25px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:sticky;
-      top:0;
-      z-index:1000;
+      display:flex;justify-content:space-between;align-items:center;
+      position:sticky;top:0;z-index:1000;
     }
-
     .logo-img {height:45px;cursor:pointer;transition:transform 0.3s;}
     .logo-img:hover {transform:scale(1.05);}
     .menu-btn {cursor:pointer;font-size:28px;color:#fff;}
     nav {display:none;background:rgba(0,0,0,0.9);text-align:center;}
-    nav a {display:block;padding:12px;color:white;text-decoration:none;transition:0.3s;}
+    nav a {display:block;padding:12px;color:white;text-decoration:none;}
     nav a:hover {background:#ff6600;}
 
     section {padding:60px 20px;text-align:center;}
     h1 {color:#ff6600;margin-bottom:40px;font-size:2rem;}
     h2 {color:#000;margin:20px 0;}
-
-    .categoria {margin-bottom:60px;}
-    .btn-ver {
-      background:#ff6600;border:none;color:#fff;
-      padding:10px 20px;font-weight:bold;border-radius:8px;
-      cursor:pointer;transition:0.3s;box-shadow:0 2px 6px rgba(0,0,0,0.2);
-    }
-    .btn-ver:hover {background:#000;transform:translateY(-2px);}
 
     .galeria {
       display:none;opacity:0;transition:opacity 0.6s ease;
@@ -67,23 +49,30 @@
 
     footer {
       background:#000;color:white;text-align:center;
-      padding:25px;font-size:14px;margin-top:50px;
+      padding:30px;font-size:14px;margin-top:50px;
     }
+    footer img {width:80px;margin-bottom:10px;border-radius:8px;}
     .social {margin-top:10px;}
     .social a {display:inline-block;margin:0 8px;}
-    .social img {width:24px;height:24px;filter:invert(1);transition:0.3s;}
+    .social img {width:26px;height:26px;filter:invert(1);transition:0.3s;}
     .social img:hover {transform:scale(1.1);opacity:0.8;}
 
-    @media (max-width:768px){
-      h1{font-size:1.6rem;}
-      .btn-ver{padding:8px 16px;font-size:0.9rem;}
+    /* Botón flotante de WhatsApp */
+    .whatsapp-float {
+      position:fixed;bottom:20px;right:20px;z-index:100;
     }
+    .whatsapp-float img {
+      width:55px;height:55px;border-radius:50%;
+      box-shadow:0 2px 6px rgba(0,0,0,0.3);
+      transition:transform 0.3s ease;
+    }
+    .whatsapp-float img:hover {transform:scale(1.1);}
   </style>
 </head>
 <body>
 
   <header>
-    <img src="img/logo.png" alt="Apes Amoblamientos" class="logo-img" onclick="window.location.href='index.html'">
+    <img src="img/logo.jpg" alt="Apes Amoblamientos" class="logo-img" onclick="window.location.href='index.html'">
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
   </header>
 
@@ -99,7 +88,6 @@
   <section id="galerias">
     <h1>Proyectos</h1>
 
-    <!-- Cocinas -->
     <div class="categoria" id="cocinas">
       <h2>Cocinas</h2>
       <div id="galeria-cocinas" class="galeria">
@@ -108,7 +96,6 @@
       </div>
     </div>
 
-    <!-- Vestidores -->
     <div class="categoria" id="vestidores">
       <h2>Vestidores</h2>
       <div id="galeria-vestidores" class="galeria">
@@ -117,7 +104,6 @@
       </div>
     </div>
 
-    <!-- Habitaciones -->
     <div class="categoria" id="habitaciones">
       <h2>Habitaciones</h2>
       <div id="galeria-habitaciones" class="galeria">
@@ -126,7 +112,6 @@
       </div>
     </div>
 
-    <!-- Baños -->
     <div class="categoria" id="banos">
       <h2>Baños</h2>
       <div id="galeria-banos" class="galeria">
@@ -135,7 +120,6 @@
       </div>
     </div>
 
-    <!-- Otros -->
     <div class="categoria" id="otros">
       <h2>Otros proyectos</h2>
       <div id="galeria-otros" class="galeria">
@@ -146,13 +130,18 @@
   </section>
 
   <footer>
-    <p>📞 +54 9 11 6568-8191</p>
-    <p>📸 <a href="https://www.instagram.com/apesamoblamientos/" target="_blank">@apesamoblamientos</a></p>
+    <img src="img/logo.jpg" alt="Apes Amoblamientos Logo">
+    <p>📞 +54 9 11 5666-8191</p>
     <div class="social">
+      <a href="https://wa.me/5491156668191?text=Hola,%20quiero%20consultar%20por%20un%20mueble%20a%20medida." target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
       <a href="https://www.instagram.com/apesamoblamientos/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
     </div>
-    <p>© <span id="year"></span> Apes Amoblamientos</p>
+    <p style="margin-top:10px;">© 2025 Apes Amoblamientos</p>
   </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5491156668191?text=Hola,%20quiero%20consultar%20por%20un%20mueble%20a%20medida." target="_blank">
+    <img src="img/whatsapp.png" alt="WhatsApp Chat">
+  </a>
 
   <script>
     function toggleMenu() {
@@ -164,7 +153,6 @@
     window.addEventListener('DOMContentLoaded', () => {
       const hash = window.location.hash;
       const todas = ['galeria-cocinas','galeria-vestidores','galeria-habitaciones','galeria-banos','galeria-otros'];
-
       if (hash) {
         const id = hash.replace('#', 'galeria-');
         todas.forEach(g => {
@@ -180,8 +168,6 @@
       } else {
         todas.forEach(g => document.getElementById(g).classList.add('activa'));
       }
-
-      document.getElementById("year").textContent = new Date().getFullYear();
     });
   </script>
 
