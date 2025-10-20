@@ -3,76 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proyectos | Apes Amoblamientos</title>
-  <meta name="description" content="Proyectos de Apes Amoblamientos: cocinas, vestidores, habitaciones, baños y muebles personalizados en Zona Norte y CABA.">
-  <meta name="keywords" content="muebles, cocinas, vestidores, habitaciones, baños, diseño, Apes Amoblamientos">
-  <link rel="icon" href="img/logo.jpg" type="image/jpeg">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+  <title>Obras - Apes Amoblamientos</title>
+  <meta name="description" content="Galería de trabajos de Apes Amoblamientos: cocinas, vestidores, habitaciones y más. Zona Norte y CABA.">
+  <link rel="icon" type="image/png" href="img/logo.jpg" />
   <style>
-    * {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-    body {font-family:'Montserrat',sans-serif;background:#fff;color:#000;overflow-x:hidden;}
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #000000 40%, #ff6600 100%);
+      color: #fff;
+    }
 
     header {
-      background:linear-gradient(135deg,#000000 40%,#ff6600 100%);
-      padding:12px 25px;
-      display:flex;justify-content:space-between;align-items:center;
-      position:sticky;top:0;z-index:1000;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    .logo-img {height:45px;cursor:pointer;transition:transform 0.3s;}
-    .logo-img:hover {transform:scale(1.05);}
-    .menu-btn {cursor:pointer;font-size:28px;color:#fff;}
-    nav {display:none;background:rgba(0,0,0,0.9);text-align:center;}
-    nav a {display:block;padding:12px;color:white;text-decoration:none;}
-    nav a:hover {background:#ff6600;}
 
-    section {padding:60px 20px;text-align:center;}
-    h1 {color:#ff6600;margin-bottom:40px;font-size:2rem;}
-    h2 {color:#000;margin:20px 0;}
-
-    .galeria {
-      display:none;opacity:0;transition:opacity 0.6s ease;
-      margin-top:20px;max-width:1200px;margin:20px auto 0;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;
+    .logo-img {
+      height: 45px;
     }
-    .galeria.activa {display:grid;opacity:1;}
 
-    .imagen {position:relative;overflow:hidden;border-radius:10px;cursor:pointer;}
-    .imagen img {width:100%;border-radius:10px;transition:transform 0.3s ease;}
-    .imagen img:hover {transform:scale(1.05);}
-    .imagen span {
-      position:absolute;bottom:0;left:0;right:0;
-      background:rgba(0,0,0,0.6);color:#fff;padding:8px;font-size:0.9rem;
-      opacity:0;transition:opacity 0.3s;
+    .menu-btn {
+      cursor: pointer;
+      font-size: 28px;
+      color: #fff;
     }
-    .imagen:hover span {opacity:1;}
+
+    nav {
+      display: none;
+      background: rgba(0, 0, 0, 0.95);
+      text-align: center;
+    }
+
+    nav a {
+      display: block;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background: #ff6600;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+      background: #fff;
+      color: #000;
+      border-radius: 25px 25px 0 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #ff6600;
+      border-bottom: 3px solid #ff6600;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
 
     footer {
-      background:#000;color:white;text-align:center;
-      padding:30px;font-size:14px;margin-top:50px;
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
     }
-    footer img {width:80px;margin-bottom:10px;border-radius:8px;}
-    .social {margin-top:10px;}
-    .social a {display:inline-block;margin:0 8px;}
-    .social img {width:26px;height:26px;filter:invert(1);transition:0.3s;}
-    .social img:hover {transform:scale(1.1);opacity:0.8;}
 
-    /* Botón flotante de WhatsApp */
+    .social {
+      margin-top: 10px;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    .social img {
+      width: 24px;
+      height: 24px;
+      transition: 0.3s;
+    }
+
+    .social img:hover {
+      transform: scale(1.15);
+      opacity: 0.8;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 25px;
+      border: 2px solid #ff6600;
+      border-radius: 8px;
+      color: #ff6600;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #ff6600;
+      color: #fff;
+    }
+
     .whatsapp-float {
-      position:fixed;bottom:20px;right:20px;z-index:100;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 55px;
+      height: 55px;
+      z-index: 200;
     }
+
     .whatsapp-float img {
-      width:55px;height:55px;border-radius:50%;
-      box-shadow:0 2px 6px rgba(0,0,0,0.3);
-      transition:transform 0.3s ease;
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
-    .whatsapp-float img:hover {transform:scale(1.1);}
+
+    .whatsapp-float img:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="img/logo.jpg" alt="Apes Amoblamientos" class="logo-img" onclick="window.location.href='index.html'">
+    <img src="img/logo.jpg" alt="Apes Amoblamientos" class="logo-img">
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
   </header>
 
@@ -81,94 +167,73 @@
     <a href="#cocinas">Cocinas</a>
     <a href="#vestidores">Vestidores</a>
     <a href="#habitaciones">Habitaciones</a>
-    <a href="#banos">Baños</a>
-    <a href="#otros">Otros</a>
+    <a href="#baños">Baños</a>
+    <a href="#otros">Otros proyectos</a>
   </nav>
 
-  <section id="galerias">
-    <h1>Proyectos</h1>
-
-    <div class="categoria" id="cocinas">
-      <h2>Cocinas</h2>
-      <div id="galeria-cocinas" class="galeria">
-        <div class="imagen"><img src="img/cocina-blanca.webp" alt="Cocina blanca moderna" loading="lazy"><span>Cocina blanca moderna</span></div>
-        <div class="imagen"><img src="img/cocina-madera.webp" alt="Cocina de madera clara" loading="lazy"><span>Cocina de madera clara</span></div>
-      </div>
-    </div>
-
-    <div class="categoria" id="vestidores">
-      <h2>Vestidores</h2>
-      <div id="galeria-vestidores" class="galeria">
-        <div class="imagen"><img src="img/vestidor1.webp" alt="Vestidor con puertas corredizas" loading="lazy"><span>Vestidor con puertas corredizas</span></div>
-        <div class="imagen"><img src="img/vestidor2.webp" alt="Vestidor abierto moderno" loading="lazy"><span>Vestidor abierto moderno</span></div>
-      </div>
-    </div>
-
-    <div class="categoria" id="habitaciones">
-      <h2>Habitaciones</h2>
-      <div id="galeria-habitaciones" class="galeria">
-        <div class="imagen"><img src="img/habitacion1.webp" alt="Cabecera con mesas flotantes" loading="lazy"><span>Cabecera con mesas flotantes</span></div>
-        <div class="imagen"><img src="img/habitacion2.webp" alt="Placard empotrado con espejo" loading="lazy"><span>Placard empotrado con espejo</span></div>
-      </div>
-    </div>
-
-    <div class="categoria" id="banos">
-      <h2>Baños</h2>
-      <div id="galeria-banos" class="galeria">
-        <div class="imagen"><img src="img/bano1.webp" alt="Vanitory de madera a medida" loading="lazy"><span>Vanitory de madera a medida</span></div>
-        <div class="imagen"><img src="img/bano2.webp" alt="Mueble de baño moderno" loading="lazy"><span>Mueble de baño moderno</span></div>
-      </div>
-    </div>
-
-    <div class="categoria" id="otros">
-      <h2>Otros proyectos</h2>
-      <div id="galeria-otros" class="galeria">
-        <div class="imagen"><img src="img/mueble-tv.webp" alt="Mueble de TV flotante" loading="lazy"><span>Mueble de TV flotante</span></div>
-        <div class="imagen"><img src="img/barra.webp" alt="Barra desayunadora a medida" loading="lazy"><span>Barra desayunadora a medida</span></div>
-      </div>
+  <!-- Secciones -->
+  <section id="cocinas">
+    <h2>Cocinas</h2>
+    <div class="gallery">
+      <img src="img/obra1.jpg" alt="Cocina 1">
+      <img src="img/obra2.jpg" alt="Cocina 2">
     </div>
   </section>
 
-  <footer>
-    <img src="img/logo.jpg" alt="Apes Amoblamientos Logo">
-    <p>📞 +54 9 11 5666-8191</p>
-    <div class="social">
-      <a href="https://wa.me/5491156668191?text=Hola,%20quiero%20consultar%20por%20un%20mueble%20a%20medida." target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
-      <a href="https://www.instagram.com/apesamoblamientos/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+  <section id="vestidores">
+    <h2>Vestidores</h2>
+    <div class="gallery">
+      <img src="img/obra3.jpg" alt="Vestidor 1">
+      <img src="img/obra4.jpg" alt="Vestidor 2">
     </div>
-    <p style="margin-top:10px;">© 2025 Apes Amoblamientos</p>
+  </section>
+
+  <section id="habitaciones">
+    <h2>Habitaciones</h2>
+    <div class="gallery">
+      <img src="img/obra5.jpg" alt="Habitación 1">
+      <img src="img/obra6.jpg" alt="Habitación 2">
+    </div>
+  </section>
+
+  <section id="baños">
+    <h2>Baños</h2>
+    <div class="gallery">
+      <img src="img/obra4.jpg" alt="Baño 1">
+    </div>
+  </section>
+
+  <section id="otros">
+    <h2>Otros Proyectos</h2>
+    <div class="gallery">
+      <img src="img/obra5.jpg" alt="Proyecto 1">
+      <img src="img/obra6.jpg" alt="Proyecto 2">
+    </div>
+    <a href="index.html" class="btn">Volver al inicio</a>
+  </section>
+
+  <footer>
+    <p><strong>📞 +54 9 11 5668-8191</strong></p>
+    <div class="social">
+      <a href="https://wa.me/5491156688191" target="_blank">
+        <img src="img/whatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://instagram.com/apesamoblamientos" target="_blank">
+        <img src="img/instagram.png" alt="Instagram">
+      </a>
+    </div>
+    <p>© 2025 Apes Amoblamientos</p>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5491156668191?text=Hola,%20quiero%20consultar%20por%20un%20mueble%20a%20medida." target="_blank">
+  <a href="https://wa.me/5491156688191" target="_blank" class="whatsapp-float">
     <img src="img/whatsapp.png" alt="WhatsApp Chat">
   </a>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
     }
-
-    // Mostrar automáticamente solo la galería seleccionada desde el index
-    window.addEventListener('DOMContentLoaded', () => {
-      const hash = window.location.hash;
-      const todas = ['galeria-cocinas','galeria-vestidores','galeria-habitaciones','galeria-banos','galeria-otros'];
-      if (hash) {
-        const id = hash.replace('#', 'galeria-');
-        todas.forEach(g => {
-          const galeria = document.getElementById(g);
-          const seccion = galeria.parentElement;
-          if (g === id) {
-            galeria.classList.add('activa');
-          } else {
-            seccion.style.display = 'none';
-          }
-        });
-        setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 300);
-      } else {
-        todas.forEach(g => document.getElementById(g).classList.add('activa'));
-      }
-    });
   </script>
 
 </body>
