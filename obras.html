@@ -4,235 +4,283 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obras - Apes Amoblamientos</title>
-  <meta name="description" content="Galería de trabajos de Apes Amoblamientos: cocinas, vestidores, habitaciones y más. Zona Norte y CABA.">
-  <link rel="icon" type="image/png" href="img/logo.jpg" />
+  <meta name="description" content="Galería de trabajos de Apes Amoblamientos: cocinas, vestidores, habitaciones, baños y otros proyectos a medida en Zona Norte y CABA.">
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #000000 40%, #ff6600 100%);
       color: #fff;
+      overflow-x: hidden;
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
     }
+    .logo-img { height: 45px; cursor: pointer; }
+    .menu-btn { cursor: pointer; font-size: 30px; color: #fff; border: 0; background: transparent; }
 
-    .logo-img {
-      height: 45px;
-    }
-
-    .menu-btn {
-      cursor: pointer;
-      font-size: 28px;
-      color: #fff;
-    }
-
-    nav {
+    /* Menú overlay */
+    nav#menu {
       display: none;
-      background: rgba(0, 0, 0, 0.95);
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      z-index: 9999;
+      padding-top: 120px;
       text-align: center;
     }
-
-    nav a {
+    nav#menu a {
       display: block;
-      padding: 12px;
-      color: white;
+      color: #fff;
       text-decoration: none;
+      font-size: 1.35rem;
+      padding: 16px 12px;
+      transition: 0.25s;
+    }
+    nav#menu a:hover { background: #ff6600; }
+    .close-area {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-size: 34px;
+      cursor: pointer;
     }
 
-    nav a:hover {
-      background: #ff6600;
-    }
-
+    /* Galerías */
     section {
-      padding: 40px 20px;
-      text-align: center;
       background: #fff;
       color: #000;
-      border-radius: 25px 25px 0 0;
+      border-radius: 24px 24px 0 0;
+      padding: 48px 16px 40px;
+      margin: 0 0 18px;
     }
-
     section h2 {
-      font-size: 2rem;
       color: #ff6600;
-      border-bottom: 3px solid #ff6600;
-      display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 30px;
+      font-size: 1.8rem;
+      margin: 0 0 18px;
+      text-align: center;
     }
-
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 18px;
     }
-
     .gallery img {
       width: 300px;
       height: 220px;
       object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+      transition: transform 0.25s;
+      opacity: 0;
+      animation: fadeIn 0.6s forwards;
     }
+    .gallery img:hover { transform: scale(1.04); }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background: #000;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-    }
-
-    .social {
-      margin-top: 10px;
-    }
-
-    .social a {
-      display: inline-block;
-      margin: 0 8px;
-    }
-
-    .social img {
-      width: 24px;
-      height: 24px;
-      transition: 0.3s;
-    }
-
-    .social img:hover {
-      transform: scale(1.15);
-      opacity: 0.8;
-    }
-
+    /* Botones Ver más */
     .btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 25px;
       padding: 10px 25px;
       border: 2px solid #ff6600;
       border-radius: 8px;
       color: #ff6600;
       text-decoration: none;
-      transition: 0.3s;
       font-weight: bold;
+      background: none;
+      cursor: pointer;
+      transition: 0.3s;
     }
-
     .btn:hover {
       background: #ff6600;
       color: #fff;
     }
 
-    .whatsapp-float {
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 28px 12px;
+    }
+    footer a { color: #fff; text-decoration: none; }
+    .social { margin: 12px 0 2px; }
+    .social a { display: inline-block; margin: 0 8px; }
+    .social img { width: 28px; height: 28px; transition: 0.25s; }
+    .social img:hover { transform: scale(1.12); opacity: 0.9; }
+
+    /* Botón WhatsApp flotante */
+    .wa-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 55px;
-      height: 55px;
-      z-index: 200;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1200;
+      display: block;
+      width: 56px;
+      height: 56px;
     }
-
-    .whatsapp-float img {
+    .wa-float img {
       width: 100%;
+      height: 100%;
       border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+      transition: transform 0.25s;
     }
-
-    .whatsapp-float img:hover {
-      transform: scale(1.1);
-    }
+    .wa-float img:hover { transform: scale(1.08); }
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="img/logo.jpg" alt="Apes Amoblamientos" class="logo-img">
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <img src="img/logo.jpg" alt="Apes Amoblamientos" class="logo-img" onclick="location.href='index.html'">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
   </header>
 
   <nav id="menu">
-    <a href="index.html">Inicio</a>
-    <a href="#cocinas">Cocinas</a>
-    <a href="#vestidores">Vestidores</a>
-    <a href="#habitaciones">Habitaciones</a>
-    <a href="#baños">Baños</a>
-    <a href="#otros">Otros proyectos</a>
+    <div class="close-area" onclick="toggleMenu()">✕</div>
+    <a href="index.html" onclick="toggleMenu()">Inicio</a>
+    <a href="#cocinas" onclick="toggleMenu()">Cocinas</a>
+    <a href="#vestidores" onclick="toggleMenu()">Vestidores</a>
+    <a href="#habitaciones" onclick="toggleMenu()">Habitaciones</a>
+    <a href="#banos" onclick="toggleMenu()">Baños</a>
+    <a href="#otros" onclick="toggleMenu()">Otros proyectos</a>
   </nav>
 
-  <!-- Secciones -->
+  <!-- COCINAS -->
   <section id="cocinas">
     <h2>Cocinas</h2>
     <div class="gallery">
-      <img src="img/obra1.jpg" alt="Cocina 1">
-      <img src="img/obra2.jpg" alt="Cocina 2">
+      <img src="img/cocina1.jpg" alt="Cocina 1">
+      <img src="img/cocina2.jpg" alt="Cocina 2">
+      <img src="img/cocina3.jpg" alt="Cocina 3">
+      <img src="img/cocina4.jpg" alt="Cocina 4">
+      <img src="img/cocina5.jpg" alt="Cocina 5">
+      <img src="img/cocina6.jpg" alt="Cocina 6">
+      <div id="extraCocinas" style="display:none;">
+        <img src="img/cocina7.jpg" alt="Cocina 7">
+        <img src="img/cocina8.jpg" alt="Cocina 8">
+        <img src="img/cocina9.jpg" alt="Cocina 9">
+        <img src="img/cocina10.jpg" alt="Cocina 10">
+        <img src="img/cocina11.jpg" alt="Cocina 11">
+        <img src="img/cocina12.jpg" alt="Cocina 12">
+        <img src="img/cocina13.jpg" alt="Cocina 13">
+        <img src="img/cocina14.jpg" alt="Cocina 14">
+        <img src="img/cocina15.jpg" alt="Cocina 15">
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <button class="btn" onclick="toggleGallery('extraCocinas', this)">Ver más</button>
     </div>
   </section>
 
+  <!-- VESTIDORES -->
   <section id="vestidores">
     <h2>Vestidores</h2>
     <div class="gallery">
-      <img src="img/obra3.jpg" alt="Vestidor 1">
-      <img src="img/obra4.jpg" alt="Vestidor 2">
+      <img src="img/vestidor1.jpg" alt="Vestidor 1">
+      <img src="img/vestidor2.jpg" alt="Vestidor 2">
+      <div id="extraVestidores" style="display:none;">
+        <img src="img/vestidor3.jpg" alt="Vestidor 3">
+        <img src="img/vestidor4.jpg" alt="Vestidor 4">
+        <img src="img/vestidor5.jpg" alt="Vestidor 5">
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <button class="btn" onclick="toggleGallery('extraVestidores', this)">Ver más</button>
     </div>
   </section>
 
+  <!-- HABITACIONES -->
   <section id="habitaciones">
     <h2>Habitaciones</h2>
     <div class="gallery">
-      <img src="img/obra5.jpg" alt="Habitación 1">
-      <img src="img/obra6.jpg" alt="Habitación 2">
+      <img src="img/habitacion1.jpg" alt="Habitación 1">
+      <img src="img/habitacion2.jpg" alt="Habitación 2">
+      <div id="extraHabitaciones" style="display:none;">
+        <img src="img/habitacion3.jpg" alt="Habitación 3">
+        <img src="img/habitacion4.jpg" alt="Habitación 4">
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <button class="btn" onclick="toggleGallery('extraHabitaciones', this)">Ver más</button>
     </div>
   </section>
 
-  <section id="baños">
+  <!-- BAÑOS -->
+  <section id="banos">
     <h2>Baños</h2>
     <div class="gallery">
-      <img src="img/obra4.jpg" alt="Baño 1">
+      <img src="img/banio1.jpg" alt="Baño 1">
+      <div id="extraBanos" style="display:none;">
+        <img src="img/banio2.jpg" alt="Baño 2">
+        <img src="img/banio3.jpg" alt="Baño 3">
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <button class="btn" onclick="toggleGallery('extraBanos', this)">Ver más</button>
     </div>
   </section>
 
+  <!-- OTROS -->
   <section id="otros">
-    <h2>Otros Proyectos</h2>
+    <h2>Otros proyectos</h2>
     <div class="gallery">
-      <img src="img/obra5.jpg" alt="Proyecto 1">
-      <img src="img/obra6.jpg" alt="Proyecto 2">
+      <img src="img/otros1.jpg" alt="Proyecto 1">
+      <img src="img/otros2.jpg" alt="Proyecto 2">
+      <div id="extraOtros" style="display:none;">
+        <img src="img/otros3.jpg" alt="Proyecto 3">
+        <img src="img/otros4.jpg" alt="Proyecto 4">
+      </div>
     </div>
-    <a href="index.html" class="btn">Volver al inicio</a>
+    <div style="text-align:center;">
+      <button class="btn" onclick="toggleGallery('extraOtros', this)">Ver más</button>
+    </div>
   </section>
 
   <footer>
-    <p><strong>📞 +54 9 11 5668-8191</strong></p>
+    <p>📞 011-5666-8191 &nbsp; | &nbsp; <a href="mailto:alan.apes@hotmail.com">✉️ alan.apes@hotmail.com</a></p>
     <div class="social">
-      <a href="https://wa.me/5491156688191" target="_blank">
-        <img src="img/whatsapp.png" alt="WhatsApp">
-      </a>
-      <a href="https://instagram.com/apesamoblamientos" target="_blank">
-        <img src="img/instagram.png" alt="Instagram">
-      </a>
+      <a href="https://wa.me/5491156668191" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+      <a href="https://www.instagram.com/apesamoblamientos" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
     </div>
     <p>© 2025 Apes Amoblamientos</p>
   </footer>
 
-  <a href="https://wa.me/5491156688191" target="_blank" class="whatsapp-float">
+  <a href="https://wa.me/5491156668191" target="_blank" class="wa-float">
     <img src="img/whatsapp.png" alt="WhatsApp Chat">
   </a>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+      const menu = document.getElementById('menu');
+      const visible = menu.style.display === 'block';
+      menu.style.display = visible ? 'none' : 'block';
+      document.body.style.overflow = visible ? 'auto' : 'hidden';
+    }
+
+    function toggleGallery(id, btn) {
+      const section = document.getElementById(id);
+      const isVisible = section.style.display === 'block';
+      section.style.display = isVisible ? 'none' : 'block';
+      btn.textContent = isVisible ? 'Ver más' : 'Ver menos';
     }
   </script>
 
