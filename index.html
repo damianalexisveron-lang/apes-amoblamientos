@@ -1,129 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apes Amoblamientos</title>
-  <meta name="description" content="Muebles a medida en Zona Norte y CABA. Cocinas, vestidores, habitaciones y mobiliario personalizado con materiales de primera calidad.">
-  <link rel="icon" type="image/jpeg" href="img/logo.jpg" />
+  <meta name="description" content="Apes Amoblamientos: muebles a medida, cocinas, vestidores, Teatro Colón y proyectos personalizados.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Poppins,system-ui,-apple-system,Arial,sans-serif;background:linear-gradient(135deg,#000 40%,#ff6600 100%);color:#fff;overflow-x:hidden}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #000, #ff6600);
+      color: #fff;
+    }
 
-    header{position:sticky;top:0;z-index:1000;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
-    .logo-img{height:45px}
-    .menu-btn{cursor:pointer;font-size:30px;color:#fff;border:0;background:transparent}
+    header {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-    /* Menú overlay */
-    nav#menu{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:9999;padding-top:120px;text-align:center}
-    nav#menu a{display:block;color:#fff;text-decoration:none;font-size:1.35rem;padding:16px 12px;transition:.25s}
-    nav#menu a:hover{background:#ff6600}
-    .close-area{position:absolute;top:16px;right:18px;font-size:34px;cursor:pointer}
+    .logo-img {
+      height: 45px;
+    }
 
-    .hero{background:#fff;min-height:58vh;display:flex;align-items:center;justify-content:center}
-    .hero img{max-width:320px;height:auto}
+    .menu-btn {
+      cursor: pointer;
+      font-size: 28px;
+      color: #fff;
+    }
 
-    #nosotros{background:#f3f3f3;color:#000;text-align:center;padding:56px 18px;border-radius:24px 24px 0 0}
-    #nosotros h2{color:#ff6600;font-size:2rem;margin:0 0 10px}
-    #nosotros .line{width:80px;height:3px;background:#ff6600;margin:8px auto 22px;border-radius:3px}
-    #nosotros p{max-width:820px;margin:0 auto;font-size:1.08rem;line-height:1.7}
+    nav {
+      display: none;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.95);
+      position: absolute;
+      top: 65px;
+      right: 0;
+      width: 200px;
+      text-align: right;
+    }
 
-    #proyectos{background:#fff;color:#000;padding:40px 16px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:1100px;margin:0 auto}
-    .card{background:#f7f7f7;border-radius:14px;box-shadow:0 3px 10px rgba(0,0,0,.12);overflow:hidden;transition:transform .35s ease, box-shadow .35s ease}
-    .card:hover{transform:scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,.25)}
-    .card img{width:100%;height:200px;object-fit:cover;transition:transform .35s ease}
-    .card img:hover{transform:scale(1.08)}
-    .card .content{padding:18px;text-align:center}
-    .card h3{margin:6px 0 8px;color:#ff6600}
-    .btn{display:inline-block;margin-top:6px;padding:10px 20px;border:2px solid #ff6600;border-radius:8px;color:#ff6600;text-decoration:none;font-weight:600;transition:.25s}
-    .btn:hover{background:#ff6600;color:#fff}
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      display: block;
+    }
 
-    footer{background:#000;color:#fff;text-align:center;padding:28px 12px}
-    footer p{margin:6px 0}
-    footer a{color:#fff;text-decoration:none}
-    .social{margin:12px 0 2px}
-    .social a{display:inline-block;margin:0 8px}
-    .social img{width:28px;height:28px;display:inline-block;transition:.25s}
-    .social img:hover{transform:scale(1.12);opacity:.9}
+    nav a:hover {
+      background: #ff6600;
+    }
 
-    .wa-float{position:fixed;right:18px;bottom:18px;z-index:1200;display:block;width:56px;height:56px}
-    .wa-float img{width:100%;height:100%;border-radius:50%;box-shadow:0 3px 10px rgba(0,0,0,.35);transition:transform .25s}
-    .wa-float img:hover{transform:scale(1.08)}
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: #fff;
+      color: #000;
+    }
 
-    @media (max-width:768px){
-      .hero img{max-width:280px}
+    .hero img {
+      max-width: 320px;
+    }
+
+    #nosotros {
+      background: #f3f3f3;
+      color: #000;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    #nosotros h2 {
+      color: #ff6600;
+    }
+
+    #proyectos {
+      background: #fff;
+      color: #000;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #f8f8f8;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.08);
+    }
+
+    .card h3 {
+      color: #ff6600;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 10px 20px;
+      border: 2px solid #ff6600;
+      border-radius: 8px;
+      color: #ff6600;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff6600;
+      color: #fff;
+    }
+
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+    }
+
+    footer a {
+      color: #ff6600;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .social img {
+      width: 26px;
+      margin: 0 8px;
+      vertical-align: middle;
+      transition: transform 0.3s;
+    }
+
+    .social img:hover {
+      transform: scale(1.2);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      z-index: 200;
+    }
+
+    .whatsapp-float img {
+      width: 100%;
+      border-radius: 50%;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="img/logo.jpg" alt="Apes Amoblamientos" class="logo-img">
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <img src="img/logo.jpg" alt="Apes Amoblamientos Logo" class="logo-img">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
-
-  <nav id="menu">
-    <div class="close-area" onclick="toggleMenu()">✕</div>
-    <a href="#nosotros" onclick="toggleMenu()">Sobre Nosotros</a>
-    <a href="#proyectos" onclick="toggleMenu()">Proyectos</a>
-    <a href="#contacto" onclick="toggleMenu()">Contacto</a>
-    <a href="obras.html" onclick="toggleMenu()">Obras</a>
-  </nav>
 
   <div class="hero">
     <img src="img/logo.jpg" alt="Logo principal Apes Amoblamientos">
+    <h1>Soluciones en Muebles a Medida</h1>
   </div>
 
   <section id="nosotros">
     <h2>Sobre Nosotros</h2>
-    <div class="line"></div>
-    <p>En <strong>Apes Amoblamientos</strong> diseñamos y fabricamos muebles a medida combinando <strong>calidad artesanal</strong> y <strong>diseño funcional</strong>. Trabajamos en <strong>Zona Norte y CABA</strong>, realizando cocinas, vestidores, habitaciones y mobiliario personalizado. Acompañamos cada proyecto desde el diseño hasta la instalación final, cuidando los detalles y los tiempos de entrega.</p>
+    <p>En <strong>Apes Amoblamientos</strong> diseñamos y fabricamos muebles a medida con la mejor calidad y atención al detalle. Trabajamos en Zona Norte y CABA, ofreciendo soluciones para cocinas, vestidores, proyectos especiales y obras de gran escala como el Teatro Colón.</p>
   </section>
 
   <section id="proyectos">
+    <h2>Proyectos</h2>
     <div class="grid">
       <div class="card">
-        <img src="img/obra1.jpg" alt="Cocinas">
-        <div class="content">
-          <h3>Cocinas</h3>
-          <a href="obras.html#cocinas" class="btn">Ver más</a>
-        </div>
+        <img src="img/cocina1.jpg" alt="Cocinas">
+        <h3>Cocinas</h3>
+        <a href="obras.html#cocinas" class="btn">Ver más</a>
       </div>
       <div class="card">
-        <img src="img/obra2.jpg" alt="Vestidores">
-        <div class="content">
-          <h3>Vestidores</h3>
-          <a href="obras.html#vestidores" class="btn">Ver más</a>
-        </div>
+        <img src="img/vestidor1.jpg" alt="Vestidores">
+        <h3>Vestidores</h3>
+        <a href="obras.html#vestidores" class="btn">Ver más</a>
       </div>
       <div class="card">
-        <img src="img/obra3.jpg" alt="Habitaciones">
-        <div class="content">
-          <h3>Habitaciones</h3>
-          <a href="obras.html#habitaciones" class="btn">Ver más</a>
-        </div>
+        <img src="img/colon1.jpg" alt="Teatro Colón">
+        <h3>Teatro Colón</h3>
+        <a href="obras.html#colon" class="btn">Ver más</a>
       </div>
       <div class="card">
-        <img src="img/obra4.jpg" alt="Baños">
-        <div class="content">
-          <h3>Baños</h3>
-          <a href="obras.html#banos" class="btn">Ver más</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/obra5.jpg" alt="Otros Proyectos">
-        <div class="content">
-          <h3>Otros Proyectos</h3>
-          <a href="obras.html#otros" class="btn">Ver más</a>
-        </div>
+        <img src="img/otros1.jpg" alt="Otros Proyectos">
+        <h3>Otros Proyectos</h3>
+        <a href="obras.html#otros" class="btn">Ver más</a>
       </div>
     </div>
   </section>
 
   <footer id="contacto">
-    <p>📞 011-5666-8191 &nbsp; | &nbsp; <a href="mailto:alan.apes@hotmail.com">✉️ alan.apes@hotmail.com</a></p>
+    <p>📞 <strong>011-5666-8191</strong></p>
+    <p>📧 <a href="mailto:alan.apes@hotmail.com">alan.apes@hotmail.com</a></p>
     <div class="social">
       <a href="https://wa.me/5491156668191" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
       <a href="https://www.instagram.com/apesamoblamientos" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
@@ -131,16 +235,14 @@
     <p>© 2025 Apes Amoblamientos</p>
   </footer>
 
-  <a href="https://wa.me/5491156668191" target="_blank" class="wa-float">
-    <img src="img/whatsapp.png" alt="WhatsApp Chat">
+  <a class="whatsapp-float" href="https://wa.me/5491156668191" target="_blank">
+    <img src="img/whatsapp.png" alt="WhatsApp flotante">
   </a>
 
   <script>
-    function toggleMenu(){
-      const menu=document.getElementById('menu');
-      const visible=menu.style.display==='block';
-      menu.style.display=visible?'none':'block';
-      document.body.style.overflow=visible?'auto':'hidden';
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
   </script>
 </body>
