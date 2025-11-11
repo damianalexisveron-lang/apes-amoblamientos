@@ -3,47 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apes Amoblamientos</title>
-  <meta name="description" content="Apes Amoblamientos: muebles a medida, cocinas, vestidores, Teatro Colón y proyectos personalizados en Zona Norte y CABA.">
+  <title>Apes Amoblamientos | Muebles a medida en Zona Norte y CABA</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Apes Amoblamientos: diseño, fabricación e instalación de muebles a medida. Cocinas, vestidores y proyectos especiales en Zona Norte y CABA, incluyendo trabajos en el Teatro Colón." />
+  <meta name="keywords" content="Apes Amoblamientos, muebles a medida, cocinas a medida, vestidores a medida, carpintería, Zona Norte, CABA, Teatro Colón" />
+  <link rel="canonical" href="https://www.apesamoblamientos.com/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Apes Amoblamientos | Muebles a medida en Zona Norte y CABA" />
+  <meta property="og:description" content="Cocinas, vestidores y proyectos especiales. Calidad, estética y precisión. Zona Norte y CABA." />
+  <meta property="og:url" content="https://www.apesamoblamientos.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.apesamoblamientos.com/img/portada.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {margin:0;font-family:'Montserrat',sans-serif;background:#fff;color:#000;scroll-behavior:smooth;}
-    header{background:rgba(0,0,0,0.95);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;}
+    header{background:rgba(0,0,0,.95);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;}
     .logo-img{height:48px;cursor:pointer;}
     .menu-btn{cursor:pointer;font-size:28px;color:#fff;display:none;}
     nav{display:flex;gap:20px;}
-    nav a{color:white;text-decoration:none;font-weight:600;}
+    nav a{color:#fff;text-decoration:none;font-weight:600;}
     nav a:hover{color:#ff6600;}
     @media(max-width:768px){
       .menu-btn{display:block;}
-      nav{display:none;flex-direction:column;position:absolute;top:65px;right:0;width:100%;background:rgba(0,0,0,0.95);text-align:center;}
+      nav{display:none;flex-direction:column;position:absolute;top:65px;right:0;width:100%;background:rgba(0,0,0,.95);text-align:center;}
       nav a{padding:15px 0;border-top:1px solid #222;}
       nav.show{display:flex;}
     }
-    .hero{display:flex;justify-content:center;align-items:center;height:80vh;background:#fff;}
+
+    /* Hero con logo grande centrado */
+    .hero{display:flex;justify-content:center;align-items:center;height:70vh;background:#fff;}
     .hero img{max-width:420px;width:90%;height:auto;}
+
+    /* Sobre Nosotros */
     #nosotros{padding:60px 20px;text-align:center;background:#f3f3f3;}
     #nosotros h2{color:#ff6600;margin-bottom:20px;}
-    #nosotros p{max-width:800px;margin:auto;line-height:1.6;}
+    #nosotros p{max-width:820px;margin:auto;line-height:1.6;}
+
+    /* Proyectos */
     #proyectos{padding:60px 20px;text-align:center;}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
-    .card{background:#f8f8f8;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,0.2);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;}
-    .card:hover{transform:scale(1.05);box-shadow:0 8px 25px rgba(0,0,0,0.3);}
+    .card{background:#f8f8f8;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.2);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;}
+    .card:hover{transform:scale(1.05);box-shadow:0 8px 25px rgba(0,0,0,.3);}
     .card img{width:100%;height:200px;object-fit:cover;}
     .card h3{color:#ff6600;margin:10px 0;}
     .btn{display:inline-block;margin-bottom:15px;padding:10px 20px;border:2px solid #ff6600;border-radius:8px;color:#ff6600;text-decoration:none;font-weight:bold;transition:.3s;}
     .btn:hover{background:#ff6600;color:#fff;}
+
+    /* Footer */
     footer{background:#000;color:#fff;text-align:center;padding:25px 10px;}
     footer a{color:#ff6600;text-decoration:none;font-weight:600;}
     .social img{width:26px;margin:0 8px;vertical-align:middle;transition:transform .3s;}
     .social img:hover{transform:scale(1.2);}
+
+    /* WhatsApp flotante */
     .whatsapp-float{position:fixed;bottom:20px;right:20px;width:60px;z-index:200;}
     .whatsapp-float img{width:100%;border-radius:50%;}
   </style>
+
+  <!-- JSON-LD (Organización) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Apes Amoblamientos",
+    "url":"https://www.apesamoblamientos.com/",
+    "logo":"https://www.apesamoblamientos.com/img/logo.jpg",
+    "sameAs":["https://www.instagram.com/apesamoblamientos"],
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "telephone":"+54-11-5666-8191",
+      "contactType":"customer service",
+      "areaServed":"AR"
+    }]
+  }
+  </script>
 </head>
 <body>
   <header>
-    <a href="index.html"><img src="img/logo.jpg" alt="Apes Amoblamientos" class="logo-img"></a>
+    <a href="index.html"><img src="img/logo.jpg" alt="Apes Amoblamientos" class="logo-img" /></a>
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
     <nav id="menu">
       <a href="#nosotros">Nosotros</a>
@@ -53,14 +97,14 @@
   </header>
 
   <div class="hero">
-    <img src="img/logo.jpg" alt="Logo Apes Amoblamientos">
+    <img src="img/logo.jpg" alt="Logo Apes Amoblamientos" />
   </div>
 
   <section id="nosotros">
     <h2>Sobre Nosotros</h2>
     <p>
-      En <strong>Apes Amoblamientos</strong> ofrecemos diseños funcionales, modernos y personalizados. 
-      Cada proyecto se adapta a tus necesidades, garantizando calidad, estética y precisión en cada detalle. 
+      En <strong>Apes Amoblamientos</strong> ofrecemos diseños funcionales, modernos y personalizados.
+      Cada proyecto se adapta a tus necesidades, garantizando calidad, estética y precisión en cada detalle.
       Realizamos trabajos a medida en cocinas, vestidores, oficinas y obras destacadas como el <strong>Teatro Colón</strong>.
     </p>
   </section>
@@ -69,22 +113,22 @@
     <h2>Proyectos</h2>
     <div class="grid">
       <div class="card">
-        <img src="img/portada.jpg" alt="Cocinas">
+        <img src="img/portada.jpg" alt="Cocinas" loading="lazy" />
         <h3>Cocinas</h3>
         <a href="obras.html#cocinas" class="btn">Ver más</a>
       </div>
       <div class="card">
-        <img src="img/portada-vestidores.jpg" alt="Vestidores">
+        <img src="img/portada-vestidores.jpg" alt="Vestidores" loading="lazy" />
         <h3>Vestidores</h3>
         <a href="obras.html#vestidores" class="btn">Ver más</a>
       </div>
       <div class="card">
-        <img src="img/portada-colon.jpg" alt="Teatro Colón">
+        <img src="img/portada-colon.jpg" alt="Teatro Colón" loading="lazy" />
         <h3>Teatro Colón</h3>
         <a href="obras.html#colon" class="btn">Ver más</a>
       </div>
       <div class="card">
-        <img src="img/portada-otros.jpg" alt="Otros proyectos">
+        <img src="img/portada-otros.jpg" alt="Otros Proyectos" loading="lazy" />
         <h3>Otros Proyectos</h3>
         <a href="obras.html#otros" class="btn">Ver más</a>
       </div>
@@ -95,23 +139,22 @@
     <p>📞 <strong>011-5666-8191</strong></p>
     <p>📧 <a href="mailto:alan.apes@hotmail.com">alan.apes@hotmail.com</a></p>
     <div class="social">
-      <a href="https://wa.me/5491156668191" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
-      <a href="https://www.instagram.com/apesamoblamientos" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+      <a href="https://wa.me/5491156668191" target="_blank" rel="noopener"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+      <a href="https://www.instagram.com/apesamoblamientos" target="_blank" rel="noopener"><img src="img/instagram.png" alt="Instagram" /></a>
     </div>
     <p>© 2025 Apes Amoblamientos</p>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5491156668191" target="_blank">
-    <img src="img/whatsapp.png" alt="WhatsApp flotante">
+  <a class="whatsapp-float" href="https://wa.me/5491156668191" target="_blank" rel="noopener">
+    <img src="img/whatsapp.png" alt="WhatsApp flotante" />
   </a>
 
   <script>
-    function toggleMenu(){
-      document.getElementById('menu').classList.toggle('show');
-    }
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('show'); }
   </script>
 </body>
 </html>
+
 
 
 
