@@ -3,35 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Obras - Apes Amoblamientos</title>
+  <title>Obras | Apes Amoblamientos</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Galería de obras: cocinas, vestidores, Teatro Colón y otros proyectos de Apes Amoblamientos en Zona Norte y CABA." />
+  <link rel="canonical" href="https://www.apesamoblamientos.com/obras.html" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- OG -->
+  <meta property="og:title" content="Obras | Apes Amoblamientos" />
+  <meta property="og:description" content="Explorá cocinas, vestidores, Teatro Colón y otros proyectos realizados." />
+  <meta property="og:url" content="https://www.apesamoblamientos.com/obras.html" />
+  <meta property="og:type" content="website" />
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body{font-family:'Montserrat',sans-serif;margin:0;background:#f8f8f8;color:#222;}
-    header{background:rgba(0,0,0,0.95);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+    header{background:rgba(0,0,0,.95);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
     header a img{height:45px;cursor:pointer;}
     .menu-btn{cursor:pointer;font-size:28px;color:#fff;}
-    nav{display:none;flex-direction:column;background:rgba(0,0,0,0.95);position:absolute;top:65px;right:0;width:200px;text-align:right;}
-    nav a{color:white;text-decoration:none;padding:12px 18px;display:block;}
+    nav{display:none;flex-direction:column;background:rgba(0,0,0,.95);position:absolute;top:65px;right:0;width:200px;text-align:right;}
+    nav a{color:#fff;text-decoration:none;padding:12px 18px;display:block;}
     nav a:hover{background:#ff6600;}
     nav.show{display:flex;}
+
     .hero{text-align:center;padding:60px 20px;background:#fff;color:#000;}
     h1{font-size:2rem;margin-bottom:10px;}
     section{padding:40px 20px;max-width:1200px;margin:auto;}
     h2{text-align:center;color:#ff6600;margin-bottom:25px;}
+
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
     .gallery img{width:100%;border-radius:10px;cursor:pointer;transition:transform .4s ease,box-shadow .4s ease;}
-    .gallery img:hover{transform:scale(1.05);box-shadow:0 6px 15px rgba(0,0,0,0.3);}
-    footer{background:#000;color:white;text-align:center;padding:25px 10px;}
+    .gallery img:hover{transform:scale(1.05);box-shadow:0 6px 15px rgba(0,0,0,.3);}
+    .gallery img[loading="lazy"]{background:#eee;}
+
+    footer{background:#000;color:#fff;text-align:center;padding:25px 10px;}
     footer a{color:#ff6600;text-decoration:none;font-weight:600;}
     .social img{width:26px;margin:0 8px;vertical-align:middle;transition:transform .3s;}
     .social img:hover{transform:scale(1.2);}
     .whatsapp-float{position:fixed;bottom:20px;right:20px;width:60px;z-index:200;}
     .whatsapp-float img{width:100%;border-radius:50%;}
-    /* Modal elegante */
-    .modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;animation:fadeIn .5s;}
+
+    /* Modal elegante con fade-in y margen */
+    .modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.85);align-items:center;justify-content:center;animation:fadeIn .35s;}
     @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-    .modal-content{max-width:80%;max-height:80%;border-radius:10px;background:#fff;padding:10px;}
-    .close,.prev,.next{position:absolute;color:white;font-size:40px;cursor:pointer;user-select:none;}
+    .modal-content{max-width:80%;max-height:80%;border-radius:10px;background:#fff;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.5);}
+    .close,.prev,.next{position:absolute;color:#fff;font-size:40px;cursor:pointer;user-select:none;text-shadow:0 2px 8px rgba(0,0,0,.5);}
     .close{top:20px;right:35px;}
     .prev{left:20px;top:50%;transform:translateY(-50%);}
     .next{right:20px;top:50%;transform:translateY(-50%);}
@@ -39,7 +56,7 @@
 </head>
 <body>
   <header>
-    <a href="index.html"><img src="img/logo.jpg" alt="Apes Amoblamientos"></a>
+    <a href="index.html"><img src="img/logo.jpg" alt="Apes Amoblamientos" /></a>
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
     <nav id="menu">
       <a href="index.html">Inicio</a>
@@ -53,84 +70,109 @@
     <p>Conocé algunos de nuestros proyectos más destacados.</p>
   </div>
 
+  <!-- Cocinas -->
   <section id="cocinas">
     <h2>Cocinas</h2>
     <div class="gallery">
-      <script>for(let i=1;i<=13;i++){document.write(`<img src='img/cocina${i}.jpg' alt='Cocina ${i}'>`);}</script>
+      <script>
+        for(let i=1;i<=13;i++){
+          document.write(`<img src="img/cocina${i}.jpg" alt="Cocina ${i}" loading="lazy">`);
+        }
+      </script>
     </div>
   </section>
 
+  <!-- Vestidores -->
   <section id="vestidores">
     <h2>Vestidores</h2>
     <div class="gallery">
-      <script>for(let i=1;i<=21;i++){document.write(`<img src='img/vestidor${i}.jpg' alt='Vestidor ${i}'>`);}</script>
+      <script>
+        for(let i=1;i<=21;i++){
+          document.write(`<img src="img/vestidor${i}.jpg" alt="Vestidor ${i}" loading="lazy">`);
+        }
+      </script>
     </div>
   </section>
 
+  <!-- Teatro Colón -->
   <section id="colon">
     <h2>Teatro Colón</h2>
     <div class="gallery">
-      <script>for(let i=1;i<=8;i++){document.write(`<img src='img/colon${i}.jpg' alt='Colón ${i}'>`);}</script>
+      <script>
+        for(let i=1;i<=8;i++){
+          document.write(`<img src="img/colon${i}.jpg" alt="Teatro Colón ${i}" loading="lazy">`);
+        }
+      </script>
     </div>
   </section>
 
+  <!-- Otros Proyectos (12 imágenes) -->
   <section id="otros">
     <h2>Otros Proyectos</h2>
     <div class="gallery">
-      <img src="img/otros1.jpg" alt="Proyecto 1">
-      <img src="img/otros2.jpg" alt="Proyecto 2">
-      <img src="img/otros3.jpg" alt="Proyecto 3">
+      <script>
+        for(let i=1;i<=12;i++){
+          document.write(`<img src="img/otros${i}.jpg" alt="Proyecto ${i}" loading="lazy">`);
+        }
+      </script>
     </div>
   </section>
 
+  <!-- Modal -->
   <div id="modal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-    <img class="modal-content" id="modal-img">
+    <img class="modal-content" id="modal-img" alt="">
     <span class="next" onclick="changeImage(1)">&#10095;</span>
   </div>
 
-  <footer>
+  <footer id="contacto">
     <p>📞 <strong>011-5666-8191</strong></p>
     <p>📧 <a href="mailto:alan.apes@hotmail.com">alan.apes@hotmail.com</a></p>
     <div class="social">
-      <a href="https://wa.me/5491156668191" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
-      <a href="https://www.instagram.com/apesamoblamientos" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+      <a href="https://wa.me/5491156668191" target="_blank" rel="noopener"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+      <a href="https://www.instagram.com/apesamoblamientos" target="_blank" rel="noopener"><img src="img/instagram.png" alt="Instagram" /></a>
     </div>
     <p>© 2025 Apes Amoblamientos</p>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5491156668191" target="_blank">
-    <img src="img/whatsapp.png" alt="WhatsApp flotante">
+  <a class="whatsapp-float" href="https://wa.me/5491156668191" target="_blank" rel="noopener">
+    <img src="img/whatsapp.png" alt="WhatsApp flotante" />
   </a>
 
   <script>
-    function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
-    let currentGallery=[],currentIndex=0;
-    document.querySelectorAll('.gallery img').forEach(img=>{
-      img.addEventListener('click',()=>{
-        currentGallery=[...img.closest('.gallery').querySelectorAll('img')];
-        currentIndex=currentGallery.indexOf(img);
-        openModal(img.src);
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('show'); }
+
+    let currentGallery = [], currentIndex = 0;
+
+    // Delegación para todas las galerías
+    document.querySelectorAll('.gallery').forEach(gal => {
+      gal.addEventListener('click', e => {
+        const target = e.target;
+        if(target.tagName.toLowerCase() !== 'img') return;
+        currentGallery = Array.from(gal.querySelectorAll('img'));
+        currentIndex = currentGallery.indexOf(target);
+        openModal(target.src);
       });
     });
+
     function openModal(src){
-      const modal=document.getElementById('modal');
-      const modalImg=document.getElementById('modal-img');
-      modal.style.display='flex';
-      modalImg.src=src;
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modal-img');
+      modal.style.display = 'flex';
+      modalImg.src = src;
     }
-    function closeModal(){document.getElementById('modal').style.display='none';}
+    function closeModal(){ document.getElementById('modal').style.display='none'; }
     function changeImage(dir){
-      currentIndex+=dir;
-      if(currentIndex<0)currentIndex=currentGallery.length-1;
-      if(currentIndex>=currentGallery.length)currentIndex=0;
-      document.getElementById('modal-img').src=currentGallery[currentIndex].src;
+      currentIndex += dir;
+      if(currentIndex < 0) currentIndex = currentGallery.length - 1;
+      if(currentIndex >= currentGallery.length) currentIndex = 0;
+      document.getElementById('modal-img').src = currentGallery[currentIndex].src;
     }
-    document.addEventListener('keydown',e=>{
-      if(e.key==='Escape')closeModal();
-      if(e.key==='ArrowLeft')changeImage(-1);
-      if(e.key==='ArrowRight')changeImage(1);
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Escape') closeModal();
+      if(e.key === 'ArrowLeft') changeImage(-1);
+      if(e.key === 'ArrowRight') changeImage(1);
     });
   </script>
 </body>
